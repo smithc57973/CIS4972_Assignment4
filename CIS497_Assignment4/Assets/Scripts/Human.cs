@@ -7,14 +7,13 @@ public class Human : Unit
     public Human()
     {
         this.description = "Human";
-        baseDmg = 5;
-        numHits = 2;
+        this.hp = 7;
+        this.dmgType = "Slashing";
     }
 
     public override int Attack()
     {
-        Debug.Log(description + " deals 2 damage, 5 times");
-        return baseDmg * numHits;
+        return 7 + (2 * level);
     }
 
 }

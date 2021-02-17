@@ -7,14 +7,13 @@ public class Dwarf : Unit
     public Dwarf()
     {
         this.description = "Dwarf";
-        baseDmg = 5;
-        numHits = 2;
+        this.hp = 15;
+        this.dmgType = "Bludgeoning";
     }
 
     public override int Attack()
     {
-        Debug.Log(description + " deals 10 damage");
-        return baseDmg * numHits;
+        return 12;
     }
 
 }
