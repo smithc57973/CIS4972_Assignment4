@@ -12,8 +12,9 @@ public class Beholder : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        health = 50;
-        damage = 25;
+        health = 80;
+        damage = 20;
+        vulnerability = "Slashing";
     }
 
     // Update is called once per frame

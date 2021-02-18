@@ -7,13 +7,13 @@ public class Human : Unit
     public Human()
     {
         this.description = "Human";
-        this.hp = 7;
+        this.hp = 10;
         this.dmgType = "Slashing";
     }
 
     public override int Attack()
     {
-        return 7 + (2 * level);
+        return 10;
     }
 
 }

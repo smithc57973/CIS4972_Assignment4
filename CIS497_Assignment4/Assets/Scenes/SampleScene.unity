@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 62009089}
   - component: {fileID: 62009088}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: ElfButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 82732045}
   - component: {fileID: 82732044}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: WizardButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -829,7 +829,7 @@ GameObject:
   - component: {fileID: 264934972}
   - component: {fileID: 264934971}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: HumanButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -954,7 +954,7 @@ GameObject:
   - component: {fileID: 410511924}
   - component: {fileID: 410511923}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ClericButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1065,6 +1065,83 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410511921}
+  m_CullTransparentMesh: 0
+--- !u!1 &522968085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 522968086}
+  - component: {fileID: 522968088}
+  - component: {fileID: 522968087}
+  m_Layer: 5
+  m_Name: Stats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &522968086
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522968085}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 885758712}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 62.96, y: -70.7}
+  m_SizeDelta: {x: 184.71436, y: 60.712593}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &522968087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522968085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &522968088
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522968085}
   m_CullTransparentMesh: 0
 --- !u!1 &534669902
 GameObject:
@@ -1286,6 +1363,8 @@ MonoBehaviour:
   fighterButton: {fileID: 838810977}
   rogueButton: {fileID: 1805405072}
   wizardButton: {fileID: 82732044}
+  stats: {fileID: 522968087}
+  pc: {fileID: 2141679216}
 --- !u!1 &633193083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,7 +1378,7 @@ GameObject:
   - component: {fileID: 633193086}
   - component: {fileID: 633193085}
   m_Layer: 5
-  m_Name: Button
+  m_Name: DwarfButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1441,11 +1520,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoints: []
-  enemies:
-  - {fileID: 7464436993545868720, guid: 10caf9f209cbf2242a1cd38e5b2ff8f5, type: 3}
-  - {fileID: 3040785777345759341, guid: c6ef5d507da092a4196fa0bbf9cf536a, type: 3}
-  - {fileID: 803610277661723679, guid: 309ddd69d712e6946a76595bf76da805, type: 3}
+  enemiesToSpawn:
+  - {fileID: 5283757201686629893, guid: 10caf9f209cbf2242a1cd38e5b2ff8f5, type: 3}
+  - {fileID: 1302256478294691792, guid: c6ef5d507da092a4196fa0bbf9cf536a, type: 3}
+  - {fileID: 2134832320680258791, guid: 309ddd69d712e6946a76595bf76da805, type: 3}
+  enemiesPresent: []
+  pc: {fileID: 0}
   wave: 0
+  numEnemies: 0
+  waveNeeded: 0
+  doCombat: 0
 --- !u!4 &651296991
 Transform:
   m_ObjectHideFlags: 0
@@ -1473,7 +1557,7 @@ GameObject:
   - component: {fileID: 838810978}
   - component: {fileID: 838810977}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: FighterButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1677,6 +1761,7 @@ RectTransform:
   m_Children:
   - {fileID: 542126367}
   - {fileID: 1253733875}
+  - {fileID: 522968086}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2174,7 +2259,7 @@ GameObject:
   - component: {fileID: 1805405073}
   - component: {fileID: 1805405072}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: RogueButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2363,7 +2448,7 @@ GameObject:
   - component: {fileID: 2141679216}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2380,6 +2465,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71334779369df4149bb4e30eaf469985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canChooseRace: 0
+  canChooseClass: 0
+  doneChoosing: 0
   ui: {fileID: 547277413}
   heroSpawn: {fileID: 241663627}
   heros:

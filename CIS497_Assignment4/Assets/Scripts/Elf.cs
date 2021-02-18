@@ -7,13 +7,13 @@ public class Elf : Unit
     public Elf()
     {
         this.description = "Elf";
-        this.hp = 10;
+        this.hp = 8;
         this.dmgType = "Piercing";
     }
 
     public override int Attack()
     {
-        return 4 * level;
+        return 12;
     }
 
 }

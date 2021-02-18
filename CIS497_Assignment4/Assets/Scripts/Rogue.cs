@@ -17,12 +17,10 @@ public class Rogue : Unit
         int sneak = Random.Range(0, 10);
         if (sneak == 0)
         {
-            Debug.Log("Sneak");
             return unit.Attack() + 20;
         }
         else
         {
-            Debug.Log("Loud");
             return unit.Attack() + 5;
         }
         

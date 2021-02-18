@@ -5,47 +5,59 @@ using UnityEngine;
 public class TurnManager : MonoBehaviour
 {
     public GameObject[] spawnPoints;
-    public GameObject[] enemies;
+    public Enemy[] enemiesToSpawn;
+    public List<Enemy> enemiesPresent;
+    public PlayerController pc;
     
     public int wave;
+    public bool waveNeeded;
+    public bool doCombat;
 
     // Start is called before the first frame update
     void Start()
     {
-        wave = 1;
-        //Spawn(wave);
+        pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        spawnPoints = GameObject.FindGameObjectsWithTag("Spawn");
+        wave = 0;
+        waveNeeded = true;
+        doCombat = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (waveNeeded)
+        {
+            Spawn(wave);
+        }
+
+        if (doCombat && pc.doneChoosing)
+        {
+            Combat();
+        }
     }
 
     public void Spawn(int w)
     {
-        spawnPoints = GameObject.FindGameObjectsWithTag("Spawn");
-        int numSpawn = 0;
-        
         foreach (GameObject s in spawnPoints)
         {
-            if (numSpawn < w)
+            if (enemiesPresent.Count < w)
             {
                 int rand = Random.Range(0, 100);
                 if (rand <= 60)
                 {
-                    Instantiate(enemies[0], s.transform);
-                    numSpawn++;
+                    Enemy ske = Instantiate(enemiesToSpawn[0], s.transform);
+                    enemiesPresent.Add(ske);
                 }
                 else if (rand > 60 && rand < 90)
                 {
-                    Instantiate(enemies[1], s.transform);
-                    numSpawn++;
+                    Enemy sli = Instantiate(enemiesToSpawn[1], s.transform);
+                    enemiesPresent.Add(sli);
                 }
                 else
                 {
-                    Instantiate(enemies[2], s.transform);
-                    numSpawn++;
+                    Enemy beh = Instantiate(enemiesToSpawn[2], s.transform);
+                    enemiesPresent.Add(beh);
                 }
             }
             else
@@ -54,5 +66,44 @@ public class TurnManager : MonoBehaviour
             }
             
         }
+
+        waveNeeded = false;
+        wave++;
+        if (!pc.canChooseClass)
+        {
+            doCombat = true;
+        }
+    }
+
+    public void Combat()
+    {
+        foreach (Enemy e in enemiesPresent)
+        {
+            if (e.vulnerability == pc.u.dmgType)
+            {
+                e.health -= pc.u.Attack();
+            }
+            e.health -= pc.u.Attack();
+
+            if (e.health <= 0)
+            {
+                enemiesPresent.Remove(e);
+                Destroy(e.gameObject);
+                //e.gameObject.SetActive(false);
+            }
+            else
+            {
+                pc.u.hp -= e.damage;
+            }
+
+        }
+
+        if (enemiesPresent.Count == 0)
+        {
+            doCombat = false;
+            waveNeeded = true;
+            pc.canChooseClass = true;
+        }
+
     }
 }

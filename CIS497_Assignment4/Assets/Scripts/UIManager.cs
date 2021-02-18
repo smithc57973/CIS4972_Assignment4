@@ -14,10 +14,14 @@ public class UIManager : MonoBehaviour
     public Button fighterButton;
     public Button rogueButton;
     public Button wizardButton;
+    public Text stats;
+    public PlayerController pc;
 
     // Start is called before the first frame update
     void Start()
     {
+        pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+
         raceSelection.enabled = false;
         dwarfButton.gameObject.SetActive(false);
         elfButton.gameObject.SetActive(false);
@@ -33,6 +37,6 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        stats.text = pc.u.GetDescription() + "\nHP: " + pc.u.GetHP() + "\nDamage: " + pc.u.Attack();
     }
 }

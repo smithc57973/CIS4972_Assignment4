@@ -13,7 +13,8 @@ public class Slime : Enemy
     void Start()
     {
         health = 40;
-        damage = 15;
+        damage = 10;
+        vulnerability = "Piercing";
     }
 
     // Update is called once per frame

@@ -14,6 +14,7 @@ public class Skeleton : Enemy
     {
         health = 20;
         damage = 5;
+        vulnerability = "Bludgeoning";
     }
 
     // Update is called once per frame

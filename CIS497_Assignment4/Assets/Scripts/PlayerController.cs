@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private bool canChooseRace;
-    private bool canChooseClass;
+    public bool canChooseRace;
+    public bool canChooseClass;
+    public bool doneChoosing;
     public UIManager ui; 
     public GameObject heroSpawn;
     public GameObject[] heros;
@@ -15,7 +16,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         canChooseRace = true;
-        canChooseClass = true;
+        canChooseClass = false;
+        doneChoosing = false;
         ui = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
         heroSpawn = GameObject.FindGameObjectWithTag("Hero");
     }
@@ -31,17 +33,17 @@ public class PlayerController : MonoBehaviour
             ui.humanButton.gameObject.SetActive(true);
         }
 
-        if (canChooseClass && !canChooseRace)
+        if (canChooseClass && u.level < u.maxLevel)
         {
+            doneChoosing = false;
             ui.classSelection.enabled = true;
             ui.clericButton.gameObject.SetActive(true);
             ui.fighterButton.gameObject.SetActive(true);
             ui.rogueButton.gameObject.SetActive(true);
             ui.wizardButton.gameObject.SetActive(true);
         }
-        Debug.Log(u.GetDescription() + " " + u.Attack() + " " + u.GetDmgType() + " " + u.GetLevel() + " " + u.GetHP());
+        //Debug.Log(u.GetDescription() + " " + u.Attack() + " " + u.GetDmgType() + " " + u.GetLevel() + " " + u.GetHP());
 
-        canChooseClass = true;
     }
 
     public void ChooseRace(string choice)
@@ -68,6 +70,7 @@ public class PlayerController : MonoBehaviour
         ui.dwarfButton.gameObject.SetActive(false);
         ui.elfButton.gameObject.SetActive(false);
         ui.humanButton.gameObject.SetActive(false);
+        canChooseClass = true;
     }
 
     public void ChooseClass(string choice)
@@ -95,5 +98,6 @@ public class PlayerController : MonoBehaviour
         ui.fighterButton.gameObject.SetActive(false);
         ui.rogueButton.gameObject.SetActive(false);
         ui.wizardButton.gameObject.SetActive(false);
+        doneChoosing = true;
     }
 }

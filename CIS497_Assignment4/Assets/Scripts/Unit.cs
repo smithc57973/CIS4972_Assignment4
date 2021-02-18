@@ -7,6 +7,7 @@ public abstract class Unit
     public string description;
     public string dmgType;
     public int level;
+    public int maxLevel = 5;
     public int hp;
 
     public virtual string GetDescription()
