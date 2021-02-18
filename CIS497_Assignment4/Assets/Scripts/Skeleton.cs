@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Chris Smith
+ * Skeleton
+ * Assignment 4
+ * A class for Skeleton type enemies.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

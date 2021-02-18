@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Chris Smith
+ * Elf
+ * Assignment 4
+ * A class for Elf type Units.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

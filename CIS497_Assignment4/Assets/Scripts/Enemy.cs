@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Chris Smith
+ * Enemy
+ * Assignment 4
+ * An abstract class defining basic enemy functions.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

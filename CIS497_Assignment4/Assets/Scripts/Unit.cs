@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Chris Smith
+ * Unit
+ * Assignment 4
+ * An abstract class to describe a base player unit.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

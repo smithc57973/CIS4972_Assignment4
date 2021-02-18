@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Chris Smith
+ * Wizard
+ * Assignment 4
+ * A class for Wizard type Decorators.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

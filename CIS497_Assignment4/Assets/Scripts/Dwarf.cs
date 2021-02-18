@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Chris Smith
+ * Dwarf
+ * Assignment 4
+ * A class for Dwarf type Units.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

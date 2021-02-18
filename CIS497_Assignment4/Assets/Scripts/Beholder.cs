@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Chris Smith
+ * Beholder
+ * Assignment 4
+ * A class for Beholder type enemies.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

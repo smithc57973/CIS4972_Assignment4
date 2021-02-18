@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Chris Smith
+ * Cleric
+ * Assignment 4
+ * A class for Cleric type Decorators.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

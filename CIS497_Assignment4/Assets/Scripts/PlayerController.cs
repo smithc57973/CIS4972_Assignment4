@@ -1,6 +1,14 @@
-﻿using System.Collections;
+﻿/*
+ * Chris Smith
+ * PlayerController
+ * Assignment 4
+ * An script for player controls, primarily adding decorators.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -33,7 +41,7 @@ public class PlayerController : MonoBehaviour
             ui.humanButton.gameObject.SetActive(true);
         }
 
-        if (canChooseClass && u.level < u.maxLevel)
+        if (canChooseClass && u.GetLevel() < u.maxLevel)
         {
             doneChoosing = false;
             ui.classSelection.enabled = true;
@@ -42,8 +50,17 @@ public class PlayerController : MonoBehaviour
             ui.rogueButton.gameObject.SetActive(true);
             ui.wizardButton.gameObject.SetActive(true);
         }
-        Debug.Log(u.GetDescription() + " " + u.Attack() + " " + u.GetDmgType() + " " + u.GetLevel() + " " + u.GetHP());
+        //Debug.Log(u.GetDescription() + " " + u.Attack() + " " + u.GetDmgType() + " " + u.GetLevel() + " " + u.GetHP());
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            canChooseClass = true;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     public void ChooseRace(string choice)

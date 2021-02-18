@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+ * Chris Smith
+ * TurnManager
+ * Assignment 4
+ * A script that would be used to run combat. 
+ * Due to a large number of bugs that I was unable to fix, combat does not function.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -69,10 +77,6 @@ public class TurnManager : MonoBehaviour
 
         waveNeeded = false;
         wave++;
-        /*if (!pc.canChooseClass)
-        {
-            doCombat = true;
-        }*/
         doCombat = true;
     }
 
@@ -99,7 +103,7 @@ public class TurnManager : MonoBehaviour
             }*/
             
             //Combat attempt 2
-            pc.u.hp = pc.u.GetHP() - e.damage;
+            pc.u.hp = pc.u.GetHP() - e.Attack();
             if (e.vulnerability == pc.u.dmgType)
             {
                 e.health -= pc.u.Attack();
@@ -117,7 +121,7 @@ public class TurnManager : MonoBehaviour
         {
             doCombat = false;
             waveNeeded = true;
-            pc.canChooseClass = true;
+            //pc.canChooseClass = true;
         }
 
     }

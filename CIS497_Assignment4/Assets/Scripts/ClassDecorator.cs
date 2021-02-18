@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Chris Smith
+ * ClassDecorator
+ * Assignment 4
+ * An abstract class for decorating a unit with other classes.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

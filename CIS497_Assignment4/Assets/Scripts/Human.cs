@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Chris Smith
+ * Human
+ * Assignment 4
+ * A class for Human type Units.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

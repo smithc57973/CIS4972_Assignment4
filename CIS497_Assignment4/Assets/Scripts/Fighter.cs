@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Chris Smith
+ * Fighter
+ * Assignment 4
+ * A class for Fighter type Decorators.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

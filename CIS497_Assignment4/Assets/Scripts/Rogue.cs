@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Chris Smith
+ * Rogue
+ * Assignment 4
+ * A class for Rogue type Decorators.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

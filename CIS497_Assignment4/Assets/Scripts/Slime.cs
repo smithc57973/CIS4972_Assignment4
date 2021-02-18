@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Chris Smith
+ * Slime
+ * Assignment 4
+ * A class for Slime type enemies.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
