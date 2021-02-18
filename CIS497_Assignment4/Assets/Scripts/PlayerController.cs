@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
             ui.rogueButton.gameObject.SetActive(true);
             ui.wizardButton.gameObject.SetActive(true);
         }
-        //Debug.Log(u.GetDescription() + " " + u.Attack() + " " + u.GetDmgType() + " " + u.GetLevel() + " " + u.GetHP());
+        Debug.Log(u.GetDescription() + " " + u.Attack() + " " + u.GetDmgType() + " " + u.GetLevel() + " " + u.GetHP());
 
     }
 

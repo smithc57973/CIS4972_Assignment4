@@ -18,7 +18,7 @@ public class TurnManager : MonoBehaviour
     {
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         spawnPoints = GameObject.FindGameObjectsWithTag("Spawn");
-        wave = 0;
+        wave = 1;
         waveNeeded = true;
         doCombat = false;
     }
@@ -69,17 +69,19 @@ public class TurnManager : MonoBehaviour
 
         waveNeeded = false;
         wave++;
-        if (!pc.canChooseClass)
+        /*if (!pc.canChooseClass)
         {
             doCombat = true;
-        }
+        }*/
+        doCombat = true;
     }
 
     public void Combat()
     {
         foreach (Enemy e in enemiesPresent)
         {
-            if (e.vulnerability == pc.u.dmgType)
+            //Combat attempt 1
+            /*if (e.vulnerability == pc.u.dmgType)
             {
                 e.health -= pc.u.Attack();
             }
@@ -94,8 +96,21 @@ public class TurnManager : MonoBehaviour
             else
             {
                 pc.u.hp -= e.damage;
+            }*/
+            
+            //Combat attempt 2
+            pc.u.hp = pc.u.GetHP() - e.damage;
+            if (e.vulnerability == pc.u.dmgType)
+            {
+                e.health -= pc.u.Attack();
             }
+            e.health -= pc.u.Attack();
 
+            if (e.health <= 0)
+            {
+                enemiesPresent.Remove(e);
+                Destroy(e);
+            }
         }
 
         if (enemiesPresent.Count == 0)
